@@ -1,0 +1,21 @@
+<%- include('header') %>
+<%- include('hm') %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('navbar') %>      
+      <div class="mapdiv" id="worldmap"></div>
+    </div>    
+  </body>
+  <script src="js/worldmap.js"></script>
+  <script>
+    const ulInnerHtml = document.getElementById("navBar").innerHTML;
+    const newBtns = `
+      <li class="navli right" onclick="drawWorldMap('tv')"><a href="#">Total Vaccinated</a></li>
+      <li class="navli right" onclick="drawWorldMap('pfv')"><a href="#">People Fully Vaccinated</a></li>
+      <li class="navli right" onclick="drawWorldMap('pv')"><a href="#">People Vaccinated</a></li>
+    `;
+    document.getElementById("navBar").innerHTML = ulInnerHtml + newBtns;
+    drawWorldMap('pv')
+  </script>
+</html>

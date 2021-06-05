@@ -1,0 +1,31 @@
+
+<%- include('header') %>
+<%- include('dt') %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('navbar') %>
+      <div class="tablediv">
+        <table id="table" class="display" style="width: 100%">
+          <thead>
+            <tr id="tableTr"></tr>
+          </thead>
+        </table>        
+      </div>
+    </div>
+    <script src="js/datatable.js"></script>
+    <script>
+      
+      const ulInnerHtml = document.getElementById("navBar").innerHTML;
+      const newBtns = `
+        <div class="country-search-area">
+          <input class="country-input" type="input" id="countryFilter" onclick="clearInput(this);">
+          <label class="label-text">Country search</label>
+        </div>
+      `;
+      document.getElementById("navBar").innerHTML = ulInnerHtml + newBtns;      
+      getCountryList();
+      drawDataTable("South Korea");
+    </script>
+  </body>  
+</html>

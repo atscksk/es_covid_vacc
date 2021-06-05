@@ -1,0 +1,44 @@
+<%- include('header') %>
+<%- include('hc') %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('navbar') %>
+      <div class="divrow">
+        <div class="compbox chartdiv1" id="metric">
+          <div class="metric-div">
+            <div class="metric-content">
+              <div class="metric-text" style="padding-top:50px;">Number of people vaccinated in the world</div>
+            </div>
+            <div class="metric-content num-value" id="pvValue"></div>
+          </div>
+          <div class="metric-div">
+            <div class="metric-content" style="height:20%">
+              <div class="metric-text">Number of people fully vaccinated in the world</div>
+            </div>
+            <div class="metric-content num-value" style="height:80%" id="pfvValue"></div>
+          </div>
+        </div>
+        <div class="compbox chartdiv1" id="piechart"></div>
+        <div class="compbox chartdiv1" id="column"></div>
+      </div>
+      <div class="divrow">
+        <div class="compbox chartdiv2" id="basicline"></div>
+        <div class="compbox chartdiv2" id="heatmap"></div>
+      </div>
+    </div>
+    
+    <script src="js/metric.js"></script>
+    <script src="js/piechart.js"></script>
+    <script src="js/column.js"></script>
+    <script src="js/basicline.js"></script>
+    <script src="js/heatmap.js"></script>
+    <script>
+      drawMetricChart();
+      drawPieChart();
+      drawColumnChart();
+      drawLineChart();
+      drawHeatMap();
+    </script>
+  </body>  
+</html>
